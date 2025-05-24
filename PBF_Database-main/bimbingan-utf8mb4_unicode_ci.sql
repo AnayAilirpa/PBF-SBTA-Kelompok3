@@ -99,8 +99,8 @@ CREATE TABLE `jadwal_bimbingan`  (
   PRIMARY KEY (`id_jadwal`) USING BTREE,
   INDEX `id_ta`(`id_ta` ASC) USING BTREE,
   INDEX `nidn`(`nidn` ASC) USING BTREE,
-  CONSTRAINT `jadwal_bimbingan_ibfk_1` FOREIGN KEY (`id_ta`) REFERENCES `tugas_akhir` (`id_ta`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `jadwal_bimbingan_ibfk_2` FOREIGN KEY (`nidn`) REFERENCES `dosen_pembimbing` (`nidn`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `jadwal_bimbingan_ibfk_1` FOREIGN KEY (`id_ta`) REFERENCES `tugas_akhir` (`id_ta`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `jadwal_bimbingan_ibfk_2` FOREIGN KEY (`nidn`) REFERENCES `dosen_pembimbing` (`nidn`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -246,7 +246,7 @@ CREATE TABLE `tugas_akhir`  (
   `tanggal_revisi` date NULL DEFAULT NULL,
   PRIMARY KEY (`id_ta`) USING BTREE,
   INDEX `npm`(`npm` ASC) USING BTREE,
-  CONSTRAINT `tugas_akhir_ibfk_1` FOREIGN KEY (`npm`) REFERENCES `mahasiswa` (`npm`) ON DELETE CASCADE ON UPDATE RESTRICT
+  CONSTRAINT `tugas_akhir_ibfk_1` FOREIGN KEY (`npm`) REFERENCES `mahasiswa` (`npm`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
