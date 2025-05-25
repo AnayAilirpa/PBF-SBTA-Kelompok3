@@ -11,7 +11,7 @@
  Target Server Version : 100428 (10.4.28-MariaDB)
  File Encoding         : 65001
 
- Date: 24/05/2025 22:52:02
+ Date: 25/05/2025 18:14:53
 */
 
 SET NAMES utf8mb4;
@@ -195,6 +195,33 @@ INSERT INTO `migrations` VALUES (2, '0001_01_01_000001_create_cache_table', 1);
 INSERT INTO `migrations` VALUES (3, '0001_01_01_000002_create_jobs_table', 1);
 
 -- ----------------------------
+-- Table structure for notifikasi
+-- ----------------------------
+DROP TABLE IF EXISTS `notifikasi`;
+CREATE TABLE `notifikasi`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `penerima_npm` char(9) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `penerima_nidn` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `judul` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pesan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status_dibaca` tinyint(1) NOT NULL DEFAULT 0,
+  `waktu_dibuat` datetime NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `penerima_npm`(`penerima_npm` ASC) USING BTREE,
+  INDEX `penerima_nidn`(`penerima_nidn` ASC) USING BTREE,
+  CONSTRAINT `notifikasi_ibfk_1` FOREIGN KEY (`penerima_npm`) REFERENCES `mahasiswa` (`npm`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `notifikasi_ibfk_2` FOREIGN KEY (`penerima_nidn`) REFERENCES `dosen_pembimbing` (`nidn`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of notifikasi
+-- ----------------------------
+INSERT INTO `notifikasi` VALUES (2, '230202047', NULL, 'Jadwal Bimbingan Baru', 'Anda memiliki jadwal bimbingan dengan dosen pembimbing pada tanggal 2025-06-01 pukul 10:00.', 0, '2025-05-25 14:53:08');
+INSERT INTO `notifikasi` VALUES (4, NULL, '1111', 'Laporan Tugas Akhir Masuk', 'Mahasiswa dengan NPM 2115110001 telah mengunggah laporan tugas akhir.', 0, '2025-05-25 14:53:46');
+INSERT INTO `notifikasi` VALUES (6, '230202047', NULL, 'Jadwal Bimbingan', 'Kamu ada bimbingan besok jam 10 pagi.', 0, '2025-05-25 15:26:12');
+INSERT INTO `notifikasi` VALUES (7, NULL, '1111', 'Jadwal Bimbingan', 'Kamu ada bimbingan besok jam 10 pagi.', 1, '2025-05-25 15:27:52');
+
+-- ----------------------------
 -- Table structure for password_reset_tokens
 -- ----------------------------
 DROP TABLE IF EXISTS `password_reset_tokens`;
@@ -228,9 +255,11 @@ CREATE TABLE `sessions`  (
 -- ----------------------------
 -- Records of sessions
 -- ----------------------------
+INSERT INTO `sessions` VALUES ('4l6Qu64u8zc7VWkTt7xsHiu1b8MzC46lNNjBmHaq', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0', 'YTozOntzOjY6Il9mbGFzaCI7YToyOntzOjM6Im5ldyI7YTowOnt9czozOiJvbGQiO2E6MDp7fX1zOjY6Il90b2tlbiI7czo0MDoiVXRVbHJRRmNndG9yWXFXUTEwV3JtcTd6aWp0TnNjVGlIVzRkbGV5WCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2dpbiI7fX0=', 1748105263);
 INSERT INTO `sessions` VALUES ('6leavbLaJEXT4krmLaUIARp7KE59cEdkVFpKrMdR', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWkhTcVhqeGdHZ3ByekljRDIwRGt0SnNTT1ZGWTRYMU0wNWFlQXJ2MCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1741937704);
 INSERT INTO `sessions` VALUES ('Bl7SQXJDSELL16TWASvGPjBOJiZhMSvVZQd1vfaw', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicmF0M3ViNEhMTTVlNklRNGZ0MDNWZEpDd2RoSVhRUXVFNWtxbGxKbiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1741937711);
 INSERT INTO `sessions` VALUES ('OHMi9FJAi2v204JgEKfNtoeRyCNEBhALkJjVgeke', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNWxaSVNyNEZmT2xrb3J3bGtHV2piS0lWZ0FmOEZGM1ViSzhBV3g1NCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1741934965);
+INSERT INTO `sessions` VALUES ('WXMDf1K0Oz5FW9WE6Fe4ZUhvc0pUTzXkBr6Yq0eh', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYjF2MklzNFFyUm5mbXRtdkJ0NXZ5NjhMWG9kbHA2QUw2WWRaM01DYiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJuZXciO2E6MDp7fXM6Mzoib2xkIjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2dpbiI7fX0=', 1748104853);
 
 -- ----------------------------
 -- Table structure for tugas_akhir
