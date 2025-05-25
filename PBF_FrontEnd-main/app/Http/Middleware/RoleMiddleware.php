@@ -22,7 +22,8 @@ class RoleMiddleware
     Log::info('RoleMiddleware - required role: ' . $role);
         
         if (session('role') !== $role){
-            return redirect()->route('login')->withErrors(['akses'=>'Tidak memiliki akses']);
+            return redirect()->route('login');
+            // ->withErrors(['akses'=>'Tidak memiliki akses']);
         }
     return $next($request);
 }
