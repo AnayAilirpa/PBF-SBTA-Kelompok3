@@ -50,3 +50,12 @@ DEBUG - 2025-05-24 05:32:46 --> Session: Class initialized using 'CodeIgniter\Se
 INFO - 2025-05-24 05:33:20 --> Password dari frontend: mahasiswa123
 INFO - 2025-05-24 05:33:20 --> Password dari database: $2y$10$etZxyg1p4TNSSvaLc4wkUeWbHdqdNoAVllMjlZkokqd.rvzHxVOi2
 DEBUG - 2025-05-24 05:33:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-24 16:46:00 --> Password dari frontend: admin123
+INFO - 2025-05-24 16:46:00 --> Password dari database: $2y$10$TGdS0pj0.0mrXj2fAAprAec27zyACmXLzsMAjAyr8ebHHScGpGptu
+DEBUG - 2025-05-24 16:46:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-24 16:46:14 --> Password dari frontend: admin123
+INFO - 2025-05-24 16:46:14 --> Password dari database: $2y$10$TGdS0pj0.0mrXj2fAAprAec27zyACmXLzsMAjAyr8ebHHScGpGptu
+DEBUG - 2025-05-24 16:46:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-24 16:46:46 --> Password dari frontend: admin123
+INFO - 2025-05-24 16:46:46 --> Password dari database: $2y$10$TGdS0pj0.0mrXj2fAAprAec27zyACmXLzsMAjAyr8ebHHScGpGptu
+DEBUG - 2025-05-24 16:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

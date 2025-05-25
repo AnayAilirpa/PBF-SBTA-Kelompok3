@@ -37,10 +37,10 @@ $routes->get('User/(:any)', 'User::Edit_data_user/$1');
 $routes->put('User/(:any)', 'User::Proses_edit_user/$1');
 $routes->delete('User/(:any)', 'User::Hapus_data_user/$1');
 
-$routes->get('Notifikasi/Mahasiswa/(:num)', 'Notifikasi::notifikasi_mahasiswa/$1');
-$routes->get('Notifikasi/Dosen/(:num)', 'Notifikasi::notifikasi_dosen/$1');
+$routes->get('Notifikasi/mahasiswa/(:any)', 'Notifikasi::notifikasi_mahasiswa/$1');
+$routes->get('Notifikasi/dosen/(:any)', 'Notifikasi::notifikasi_dosen/$1');
 $routes->post('Notifikasi', 'Notifikasi::tambah_data_notifikasi');
-$routes->put('Notifikasi/(:num)', 'Notifikasi::tandai_sudah_dibaca/$1');
+$routes->put('Notifikasi/(:any)', 'Notifikasi::tandai_sudah_dibaca/$1');
 
 $routes->get('View', 'View::index'); 
 $routes->post('Login', 'Login::login'); 
