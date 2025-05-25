@@ -9,6 +9,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+/>
+
   </head>
   <?php echo $__env->make('sidebar', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
     
@@ -29,7 +34,9 @@
         <div class="my-3 p-3 bg-body rounded shadow-sm">
                 
                 
-                
+                <div class="pb-3">
+                  <a href="<?php echo e(route('bimbingan.create')); ?>" class="btn btn-primary">Tambah Data</a>
+                </div> 
             
                 <table class="table table-responsive">
                     <thead class="table-light">
@@ -53,7 +60,19 @@
                       <td><?php echo e($bimbingans['catatan_bimbingan']); ?></td>
                       <td><?php echo e($bimbingans['status']); ?></td>
                       
-                      
+                      <td>
+                        <form action="<?php echo e(route('bimbingan.destroy', $bimbingans['id_jadwal'])); ?>" method="POST" style="display:inline;">
+                          <?php echo csrf_field(); ?>
+                          <?php echo method_field('DELETE'); ?>
+
+                          <a href="<?php echo e(route('bimbingan.edit', $bimbingans['id_jadwal'])); ?>" class="btn btn-warning btn-sm me-1" title="Edit">
+                            <i class="bi bi-pencil-square"></i>
+                          </a>
+
+                          <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus?')" title="Hapus">
+                            <i class="bi bi-trash"></i>
+                          </button> 
+
                         </form>
                       </td>
                     </tr>
