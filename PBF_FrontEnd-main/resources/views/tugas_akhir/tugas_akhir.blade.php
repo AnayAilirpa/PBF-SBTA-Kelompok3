@@ -27,22 +27,23 @@
         <!-- START DATA -->
         <div class="my-3 p-3 bg-body rounded shadow-sm">
                 
-
+@if($role === 'admin' || $role === 'mahasiswa')
                 <div class="pb-3">
                   <a href="{{ route('tugas_akhir.create') }}" class="btn btn-primary">Tambah Data</a>
                 </div>
-          
+@endif
+          <h3 class="text-center fw-bold mb-4">Tugas Akhir</h3>
                 <table class="table table-responsive">
                     <thead class="table-light">
                         <tr>
                         <th>No</th>
                         <th>Judul</th>
-                        <th>Tugas Akhir</th>
                         <th>Status</th>
                         <th>Nama Mahasiswa</th>
-                        <th>Revisi</th>
                         <th>Tanggal Revisi</th>
+                        @if($role === 'admin' || $role === 'mahasiswa')
                         <th>Aksi</th>
+                        @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -50,26 +51,11 @@
                       <tr>
                       <td>{{$loop->iteration}}</td>
                       <td>{{$tugas_akhirs['judul']}}</td>
-                      <td>
-                        @if($tugas_akhirs['file_ta'])
-                        <a href="{{asset('storage/tugas_akhir/' .$tugas_akhirs['file_ta'])}}" target="_blank">Lihat File</a>
-                        @else
-                        <span class="text-muted"> Tidak ada file</span>
-                        @endif
-
-                      </td>
                       <td>{{$tugas_akhirs['status']}}</td>
                       <td>{{$tugas_akhirs['nama']}}</td>
-                      <td>
-                        @if($tugas_akhirs['file_revisi'])
-                        <a href="{{asset('storage/revisi_ta/' .$tugas_akhirs['file_revisi'])}}" target="_blank">Lihat File</a>
-                        @else
-                        <span class="text-muted">Tidak ada file</span>
-                        @endif
-
-                      </td>
-                      <td>{{$tugas_akhirs['tanggal_revisi']}}</td>
                       
+                      <td>{{$tugas_akhirs['tanggal_revisi']}}</td>
+                      @if($role === 'admin' || $role === 'mahasiswa')
                       <td>
                         <form action="{{ route('tugas_akhir.destroy', $tugas_akhirs['id_ta']) }}" method="POST" style="display:inline;">
                           @csrf
@@ -84,6 +70,7 @@
                           </button>
                         </form>
                       </td>
+                      @endif
                     </tr>
                     @endforeach
                     </tbody>
