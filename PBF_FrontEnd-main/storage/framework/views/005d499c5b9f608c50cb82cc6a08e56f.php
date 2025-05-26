@@ -52,7 +52,7 @@
                       <tr>
                       <td><?php echo e($loop->iteration); ?></td>
                       <td><?php echo e($tugas_akhirs['judul']); ?></td>
-                      <td><?php echo e($tugas_akhirs['status']); ?></td>
+                      <td><?php echo e($tugas_akhirs['status'] == 1 ? 'Diajukan' : 'Revisi'); ?></td>
                       <td><?php echo e($tugas_akhirs['nama']); ?></td>
                       
                       <td><?php echo e($tugas_akhirs['tanggal_revisi']); ?></td>
