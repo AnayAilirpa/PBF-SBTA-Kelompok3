@@ -8,6 +8,12 @@ Sistem Bimbingan Tugas Akhir (TA) - Backend with CodeIgniter 4
 git clone https://github.com/AnayAilirpa/PBF_BackendSBTA.git
 cd SBTA-Backend
 ```
+## 🛠️ Syarat Utama
+
+1. Instalasi **[Composer](https://getcomposer.org/Composer-Setup.exe)** dan **[PHP](https://www.php.net/downloads.php)**
+2. Download PHP (Sesuaikan dengan versi PHP anggota kelompok)
+3. Simpan Composer ke direktori php.exe.
+4. Restart Laptop atau PC
 
 ## 🔧 Instalasi dan Konfigurasi
 
