@@ -57,6 +57,13 @@
   </li>
 
   <li>
+    <a href="<?php echo e(route('v_tugasakhir.v_tugasakhir')); ?>" class="nav-link link-body-emphasis">
+    <img src="image/folder.png" alt="Icon" width="19" height="19" class="pe-none me-2">
+      View
+    </a>
+  </li>
+
+  <li>
   <form action="<?php echo e(route('logout')); ?>" method="POST">
     <?php echo csrf_field(); ?>
     <button type="submit" class="btn nav-link link-body-emphasis w-100 text-start">

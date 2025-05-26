@@ -37,7 +37,7 @@
                 <div class="pb-3">
                   <a href="<?php echo e(route('bimbingan.create')); ?>" class="btn btn-primary">Tambah Data</a>
                 </div> 
-            
+            <h3 class="text-center fw-bold mb-4">Daftar Jadwal Bimbingan</h3>
                 <table class="table table-responsive">
                     <thead class="table-light">
                         <tr>
@@ -73,6 +73,7 @@
                             <i class="bi bi-trash"></i>
                           </button> 
 
+                          
                         </form>
                       </td>
                     </tr>

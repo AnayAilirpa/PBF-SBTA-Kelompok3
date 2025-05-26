@@ -28,22 +28,23 @@
         <!-- START DATA -->
         <div class="my-3 p-3 bg-body rounded shadow-sm">
                 
-
+<?php if($role === 'admin' || $role === 'mahasiswa'): ?>
                 <div class="pb-3">
                   <a href="<?php echo e(route('tugas_akhir.create')); ?>" class="btn btn-primary">Tambah Data</a>
                 </div>
-          
+<?php endif; ?>
+          <h3 class="text-center fw-bold mb-4">Tugas Akhir</h3>
                 <table class="table table-responsive">
                     <thead class="table-light">
                         <tr>
                         <th>No</th>
                         <th>Judul</th>
-                        <th>Tugas Akhir</th>
                         <th>Status</th>
                         <th>Nama Mahasiswa</th>
-                        <th>Revisi</th>
                         <th>Tanggal Revisi</th>
+                        <?php if($role === 'admin' || $role === 'mahasiswa'): ?>
                         <th>Aksi</th>
+                        <?php endif; ?>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,26 +52,11 @@
                       <tr>
                       <td><?php echo e($loop->iteration); ?></td>
                       <td><?php echo e($tugas_akhirs['judul']); ?></td>
-                      <td>
-                        <?php if($tugas_akhirs['file_ta']): ?>
-                        <a href="<?php echo e(asset('storage/tugas_akhir/' .$tugas_akhirs['file_ta'])); ?>" target="_blank">Lihat File</a>
-                        <?php else: ?>
-                        <span class="text-muted"> Tidak ada file</span>
-                        <?php endif; ?>
-
-                      </td>
                       <td><?php echo e($tugas_akhirs['status']); ?></td>
                       <td><?php echo e($tugas_akhirs['nama']); ?></td>
-                      <td>
-                        <?php if($tugas_akhirs['file_revisi']): ?>
-                        <a href="<?php echo e(asset('storage/revisi_ta/' .$tugas_akhirs['file_revisi'])); ?>" target="_blank">Lihat File</a>
-                        <?php else: ?>
-                        <span class="text-muted">Tidak ada file</span>
-                        <?php endif; ?>
-
-                      </td>
-                      <td><?php echo e($tugas_akhirs['tanggal_revisi']); ?></td>
                       
+                      <td><?php echo e($tugas_akhirs['tanggal_revisi']); ?></td>
+                      <?php if($role === 'admin' || $role === 'mahasiswa'): ?>
                       <td>
                         <form action="<?php echo e(route('tugas_akhir.destroy', $tugas_akhirs['id_ta'])); ?>" method="POST" style="display:inline;">
                           <?php echo csrf_field(); ?>
@@ -85,6 +71,7 @@
                           </button>
                         </form>
                       </td>
+                      <?php endif; ?>
                     </tr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>
