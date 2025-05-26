@@ -58,7 +58,7 @@
                       <td><?php echo e($bimbingans['nama_dosen']); ?></td>
                       <td><?php echo e($bimbingans['tanggal_bimbingan']); ?></td>
                       <td><?php echo e($bimbingans['catatan_bimbingan']); ?></td>
-                      <td><?php echo e($bimbingans['status']); ?></td>
+                      <td><?php echo e($bimbingans['status'] == 1 ? 'Diajukan' : 'Revisi'); ?></td>
                       
                       <td>
                         <form action="<?php echo e(route('bimbingan.destroy', $bimbingans['id_jadwal'])); ?>" method="POST" style="display:inline;">
