@@ -13,6 +13,16 @@
   <main class="container py-4 pt-2 pb-5 position-relative">
     <div class="row justify-content-center mt-0">
       <div class="col-md-10 col-lg-10 mt-50">
+        @if ($errors->any())
+  <div class="alert alert-danger">
+    <ul>
+      @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+@endif
+
         <form action="{{ route('bimbingan.store') }}" method="POST" style="margin-top:100px;">
           @csrf
 
@@ -39,7 +49,7 @@
             <div class="mb-3 row">
               <label for="tanggal_bimbingan" class="col-sm-2 col-form-label">Tanggal Bimbingan</label>
               <div class="col-sm-10">
-                <input type="date" name="tanggal_bimbingan" id="tanggal_bimbingan" class="form-control" />
+                <input type="datetime-local" name="tanggal_bimbingan" id="tanggal_bimbingan" class="form-control" />
               </div>
             </div>
 
@@ -56,7 +66,7 @@
                 <select name="status" id="status" class="form-select" required>
                   <option value="">Pilih Status</option>
                   <option value="0">Diajukan</option>
-                  <option value="1">Revisi</option>
+                  <option value="1">Disetujui</option>
                 </select>
               </div>
             </div>

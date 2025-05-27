@@ -1,61 +1,28 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="css/style.css" rel="stylesheet">
+<!DOCTYPE html>
+<html>
+<head>
     <title>Login</title>
-  </head>
-  <body>
- 
-    <div class="global-container">
-        <div class="card login-form">
-            <div class="card-body">
-              <div class="text-center">
-                <img src="image/PNC.png" alt="Lock Icon" class="mb-0" width="100">
-              </div>
-                <h2 class="card-title text-center">L O G I N</h2>
-            </div>
-            <div class="card-text">
-              
-            <form action = "<?php echo e(route('login.submit')); ?>" method="POST">
-              <?php echo csrf_field(); ?>
-                <div class="mb-0">
-                  <label for="username"  class="form-label">Username</label>
-                    <input type="text" name="username" class="form-control" id="username" aria-describedby="emailHelp" value="<?php echo e(old('username')); ?>">
-                </div>
+</head>
+<body>
+    <h2>Login</h2>
 
-                <div class="mb-0">
-                 <label for="password"  class="form-label">Password</label>
-                 <input type="password" name="password" class="form-control" id="password">
-                </div>
+    <?php if($errors->any()): ?>
+        <div style="color:red;">
+            <?php echo e($errors->first()); ?>
 
-                <div class="d-grid gap-2">
-                <button class="btn btn-primary">Login</button>
-                </div>
-
-                <div class="text-center mt-3">
-               Belum punya akun? <a href="<?php echo e(route('registrasi')); ?>">Registrasi</a>
-                </div>
-
-                </form>
-                <?php if(session('gagal')): ?>
-                    <div class="alert alert-danger mt-3 text-center">
-                        <?php echo e(session('gagal')); ?>
-
-                    </div>
-                <?php endif; ?>
-                <?php if($errors->any()): ?>
-               <div class="alert alert-danger mt-3 text-center">
-               <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-               <div><?php echo e($error); ?></div>
-              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-              </div>
-              <?php endif; ?>
         </div>
-    </div>
-    </div>
-  </body>
+    <?php endif; ?>
+
+    <form method="POST" action="<?php echo e(url('/login')); ?>">
+        <?php echo csrf_field(); ?>
+        <label>Username:</label><br>
+        <input type="text" name="username"><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" name="password"><br><br>
+
+        <button type="submit">Login</button>
+    </form>
+</body>
 </html>
 <?php /**PATH C:\xampp\htdocs\PBF-SBTA-Kelompok3\PBF_FrontEnd-main\resources\views/login.blade.php ENDPATH**/ ?>

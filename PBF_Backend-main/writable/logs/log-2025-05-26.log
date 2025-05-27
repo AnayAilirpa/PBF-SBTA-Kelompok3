@@ -41,3 +41,27 @@ in APPPATH\Controllers\Notifikasi.php on line 77.
  5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
  7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PBF-SBTA-Kelompok3\\PBF_Backend-main\\public\\index.php')
+INFO - 2025-05-26 11:21:31 --> Password dari frontend: admin123
+INFO - 2025-05-26 11:21:31 --> Password dari database: $2y$10$TGdS0pj0.0mrXj2fAAprAec27zyACmXLzsMAjAyr8ebHHScGpGptu
+DEBUG - 2025-05-26 11:21:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 11:30:53 --> Password dari frontend: dosen123
+INFO - 2025-05-26 11:30:53 --> Password dari database: $2y$10$PKfiNQQiQUO2DfnDE4ApW.TDMrDHF413uUzGQbj6/KnKtxcUYFlAC
+DEBUG - 2025-05-26 11:30:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 11:34:52 --> Password dari frontend: mahasiswa123
+INFO - 2025-05-26 11:34:52 --> Password dari database: $2y$10$vOi7QAzO6/G76unltHc7AOWh31Idqy6.BrpG2xrCB2lgdywW/1/b6
+DEBUG - 2025-05-26 11:34:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 11:34:54 --> Password dari frontend: mahasiswa123
+INFO - 2025-05-26 11:34:54 --> Password dari database: $2y$10$vOi7QAzO6/G76unltHc7AOWh31Idqy6.BrpG2xrCB2lgdywW/1/b6
+DEBUG - 2025-05-26 11:34:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 11:38:08 --> Password dari frontend: mahasiswa123
+INFO - 2025-05-26 11:38:08 --> Password dari database: $2y$10$vOi7QAzO6/G76unltHc7AOWh31Idqy6.BrpG2xrCB2lgdywW/1/b6
+DEBUG - 2025-05-26 11:38:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 11:39:46 --> Password dari frontend: admin123
+INFO - 2025-05-26 11:39:46 --> Password dari database: $2y$10$TGdS0pj0.0mrXj2fAAprAec27zyACmXLzsMAjAyr8ebHHScGpGptu
+DEBUG - 2025-05-26 11:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 11:53:25 --> Password dari frontend: mahasiswa123
+INFO - 2025-05-26 11:53:25 --> Password dari database: $2y$10$vOi7QAzO6/G76unltHc7AOWh31Idqy6.BrpG2xrCB2lgdywW/1/b6
+DEBUG - 2025-05-26 11:53:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 11:57:04 --> Password dari frontend: mahasiswa123
+INFO - 2025-05-26 11:57:04 --> Password dari database: $2y$10$vOi7QAzO6/G76unltHc7AOWh31Idqy6.BrpG2xrCB2lgdywW/1/b6
+DEBUG - 2025-05-26 11:57:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
