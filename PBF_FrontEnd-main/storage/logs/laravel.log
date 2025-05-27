@@ -1130,3 +1130,10 @@
 #55 C:\\xampp\\htdocs\\PBF-SBTA-Kelompok3\\PBF_FrontEnd-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(23): require_once('C:\\\\xampp\\\\htdocs...')
 #56 {main}
 "} 
+[2025-05-26 11:21:33] local.INFO: API Response: {"status":"success","message":"Login berhasil","user":{"id_user":"6","username":"admin","role":"admin"}} 
+[2025-05-26 11:30:54] local.INFO: API Response: {"status":"success","message":"Login berhasil","user":{"id_user":"7","username":"dosen","role":"dosen"}} 
+[2025-05-26 11:34:52] local.INFO: API Response: {"status":"success","message":"Login berhasil","user":{"id_user":"8","username":"mahasiswa","role":"mahasiswa"}} 
+[2025-05-26 11:34:54] local.INFO: API Response: {"status":"success","message":"Login berhasil","user":{"id_user":"8","username":"mahasiswa","role":"mahasiswa"}} 
+[2025-05-26 11:38:08] local.INFO: API Response: {"status":"success","message":"Login berhasil","user":{"id_user":"8","username":"mahasiswa","role":"mahasiswa"}} 
+[2025-05-26 11:39:46] local.INFO: API Response: {"status":"success","message":"Login berhasil","user":{"id_user":"6","username":"admin","role":"admin"}} 
+[2025-05-26 11:57:06] local.INFO: API Response: {"status":"success","message":"Login berhasil","user":{"id_user":"8","username":"mahasiswa","role":"mahasiswa"}} 
