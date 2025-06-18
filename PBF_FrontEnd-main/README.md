@@ -88,12 +88,20 @@ git init
 ## 2. Tambahkan semua file ke Git
 ```
 git add .
-
-3. Commit perubahan pertama
+```
+## 3. Commit perubahan pertama
+```
 git commit -m "Initial commit"
-4. Buat repository di GitHub, lalu hubungkan dengan:
+```
+## 5. Buat repository di GitHub, lalu hubungkan dengan:
+```
 git remote add origin https://github.com/username/repo-kamu.git
-5. Ganti nama branch ke main (kalau belum)
+```
+## 6. Ganti nama branch ke main (kalau belum)
+```
 git branch -M main
-6. Push ke GitHub
+```
+## 7. Push ke GitHub
+```
 git push -u origin main
+```
