@@ -1,61 +1,78 @@
-# FRONTEND
-# SISTEM JADWAL BIMBINGAN TUGAS AKHIR
-Sistem yang dibuat menampilkan data mahasiswa, dosen pembimbing, dan jadwal bimbingan
+# 🚀 Laravel 10 Project Setup Guide
 
-## 📌 Pendahuluan
-Project ini menggunakan **Laravel** sebagai framework utama dengan integrasi frontend menggunakan **Blade Templating Engine** dan **Bootstrap** untuk tampilan yang responsif.  
+Panduan lengkap untuk membuat dan menjalankan project Laravel 10 dari awal.
 
-## 🚀 Teknologi yang Digunakan
-- **Laravel** – Framework utama untuk pengembangan aplikasi
-- **Blade** – View engine untuk Laravel
-- **Bootstrap** – Framework CSS untuk UI yang responsif
-- **REST API** – Komunikasi antara frontend dan backend
+---
 
-## Fitur
-### Data Mahasiswa
-- Menampilkan data mahasiswa dengan Nama Lengkap, NPM, Angkatan, Email dan No Telepon
-- Apabila login sebagai admin dan mahasiswa dapat mengelola data mahasiswa seperti menambah, mengedit, dan menghapus data mahasiswa
-- Login sebagai dosen hanya dapat melihat data mahasiswa
+## ✅ Prasyarat
 
-### Data Dosen Pembimbing
-- Menampilkan data dosen dengan Nama Lengkap, NIDN, Email dan No Telepon
-- Apabila login sebagai admin dan dosen dapat mengelola data dosen seperti menambah, mengedit, dan menghapus data dosen pembimbing
-- Login sebagai mahasiswa hanya dapat melihat data dosen
-  
-### Jadwal Bimbingan
-- Menampilkan jadwal bimbingan antara mahasiswa dan dosen.
-- Fitur tambah, edit, hapus jadwal bimbingan.
+Pastikan kamu sudah menginstal hal-hal berikut:
 
-## 📁 Struktur Direktori
-<pre> PBF-frontend-main/
-├── app/
-│   └── Http/
-│       └── Controllers/
-├── public/
-├── resources/
-│   ├── views/
-│   ├── css/
-│   └── js/
-├── routes/
-│   └── web.php
-├── .env
-├── composer.json
-└── ...</pre>
+- PHP >= 8.1
+- [Composer](https://getcomposer.org/)
+- [MySQL](https://www.mysql.com/) / PostgreSQL / SQLite / DB lain
+- [Git](https://git-scm.com/) (opsional)
 
-## Cara Install dan Jalankan
-1. Clone repository frontend ini
-   <pre>git clone https://github.com/Fahranni/PBF-BIMTA.git </pre>
-   
-3. install backend pada https://github.com/AnayAilirpa/PBF_BackendSBTA.git
+---
 
-4. Masuk ke Folder
-   
-6. Install dependencies Laravel di terminal
-   <pre>composer install</pre>
-   
-7. Konvigurasi .env sesuai kebutuhan
-   
-9. Jalankan server Laravel
-    <pre>php artisan serve</pre>
+## 🛠️ 1. Membuat Project Laravel 10 Baru
 
+Gunakan Composer untuk membuat project baru:
 
+```bash
+composer create-project laravel/laravel nama-project-anda
+```
+Gantilah nama-project-anda dengan nama folder project yang kamu inginkan.
+
+## 📂 2. Masuk ke Direktori Project
+``` bash
+cd nama-project-anda
+```
+## ⚙️ 3. Menyalin File .env
+```bash
+cp .env.example .env
+```
+## 📝 4. Konfigurasi Environment
+Edit file .env sesuai konfigurasi lokal kamu:
+``` bash
+APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_URL=http://localhost
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nama_database
+DB_USERNAME=root
+DB_PASSWORD=
+```
+## 🔑 5. Generate Application Key
+```
+php artisan key:generate
+```
+## 🧱 6. Jalankan Migrasi (Opsional)
+Jika kamu ingin langsung menggunakan struktur database default:
+```
+php artisan migrate
+```
+## ▶️ 7. Menjalankan Server Laravel
+Jalankan built-in development server:
+```
+php artisan serve
+```
+Akses aplikasi di:
+```
+http://127.0.0.1:8000
+```
+## 🎨 8. (Opsional) Install dan Jalankan Asset Frontend
+Jika menggunakan Laravel dengan Vite:
+```
+npm install
+npm run dev
+```
+
+Gunakan .env.testing untuk konfigurasi khusus saat menjalankan automated tests.
+
+Untuk autentikasi cepat, bisa gunakan Laravel Breeze atau Jetstream.
